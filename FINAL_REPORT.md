@@ -24,7 +24,7 @@ Status: built and tested locally; **nothing committed or pushed**. `site.zip` is
 - **NOT tested: a real browser and a real phone.** I cannot render pages here, so visual layout, the plotly chart's look, the map rings' positions and phone width (375 px) were checked only by reading the CSS (nav scrolls sideways; the 760 px timeline and 620 px heatmap sit in scrolling boxes; tables and images are fluid). **Please open the site once on desktop and phone before publishing.**
 
 ## 1. Fact-check fixes applied (text saved as `../site_build/inputs/anna_texts_final.md`)
-Gap-filling (replaced a `[Yuri: …]` bracket with the verified fact; source added to the page's Sources box):
+Gap-filling (replaced a `[Yury: …]` bracket with the verified fact; source added to the page's Sources box):
 - Block 3: Japan bought most of its rare earths from China "(82% in 2010, by Japanese customs data)". Source: Seaman, Ifri/CIGS, Oct 2012.
 - Block 6: deal "closed on 3 September 2026" (USA Rare Earth release, SEC Exhibit 99.1); EU "pitching" bracket removed, sources added (European Commission 26 Jun 2026, Reuters/Kitco 22 Jun, SCMP 27 Jun); Superior Electoral Court result added to Sources (Agência Brasil 26 Oct: Lula 51.79%, Flávio Bolsonaro 48.21%).
 - Block 3 Sources: Fastmarkets date and link added.

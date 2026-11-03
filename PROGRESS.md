@@ -85,25 +85,25 @@ Placement: block 0 + 3 Home finding cards + executive summary (bottom) on index;
 2012 rule: removed "(seed said 2010 -> corrected: June 2012)" from the white-paper event's title in the timeline data (monopolies.html). No page mentions 2010 for the white paper (checked by search).
 
 ### Fact-check fixes NOT applied (from `fact_check_step5.md`; approve and I apply them)
-1. Block 3: "bought most of its rare earths from China [Yuri: verify the share]" → 82% in 2010 (Seaman, Ifri/CIGS, Oct 2012).
-2. Block 3: "released the captain within days [Yuri: verify the date]" → released 24 Sep 2010, three days after shipments stopped.
+1. Block 3: "bought most of its rare earths from China [Yury: verify the share]" → 82% in 2010 (Seaman, Ifri/CIGS, Oct 2012).
+2. Block 3: "released the captain within days [Yury: verify the date]" → released 24 Sep 2010, three days after shipments stopped.
 3. Block 3: "no dysprosium or terbium oxide has reached Japan" → "has been shipped **directly** to Japan" (Fastmarkets, 6 Oct 2026).
 4. Blocks 0, 3: "Nos. 55–58, 61 and 62" → 55–58 are MOFCOM + GAC, 61 and 62 are MOFCOM alone.
 5. Block 3 Proof: Reuters 2010 / Reuters (Moffett and Palmer, 2012) could not be verified → swap for AP (24 Sep, 24 Nov 2010), WTO DS431–433 pages, USTR 13 Mar 2012.
-6. Block 6: "with all its output going to a US government-backed buyer" → "all its **Phase 1** output"; deal closed 3 Sep 2026 (answers [Yuri: check whether the deal has closed]); EU pitch confirmed as a pitch, not a signed deal (Síkela, June 2026) (answers [Yuri: verify]); Lula 51.79% (answers [Yuri: news file item 7]).
+6. Block 6: "with all its output going to a US government-backed buyer" → "all its **Phase 1** output"; deal closed 3 Sep 2026 (answers [Yury: check whether the deal has closed]); EU pitch confirmed as a pitch, not a signed deal (Síkela, June 2026) (answers [Yury: verify]); Lula 51.79% (answers [Yury: news file item 7]).
 7. Block 6: Lula's "not for sale" was said on 16 Sep when signing Law 15,506, before the election. Suggested order: "…signing it, Lula said … and on 25 October he was re-elected."
 8. Block 6: "10 November on paper, 10 January 2027 at the latest" → "10 January 2027 under the current truce".
 9. Block 6 Proof: Reuters 20 Apr 2026 and Denham → USA Rare Earth release of 20 Apr 2026 (SEC Exhibit 99.1).
 10. Block 1 (and Hook): the 23% is stated as fact; consider "by its own count" (see the curiosity line).
 
 ### Decisions for you
-1. **Approve the fixes above** (all, or which)? Until then the yellow `[Yuri: …]` brackets stay visible on sovereign.html and ace.html.
+1. **Approve the fixes above** (all, or which)? Until then the yellow `[Yury: …]` brackets stay visible on sovereign.html and ace.html.
 2. The quiz source line (Anna's) names USGS for the reserves figure, but the reveal now uses Weng et al. 2015 (43%); Weng is in the curiosity sources. Replace the USGS mention?
 3. **Old text next to Anna's.** The old ledes, source lines and "leads" boxes remain below her text: Puzzle and Chain ledes (monopolies), lede and 3 "leads" boxes (words), rerouting lede (hops), flows lede (map). They partly repeat her paragraphs. Delete or keep?
 4. Block 6 has no Transition, so sovereign.html's "Next page" link text is a yellow `[NEXT_TEXT]`.
 
 ### Placeholders left on the site
-ace: [Yuri: verify the share], [Yuri: verify the date], [Parth, Pietro]. sovereign: [Yuri: check whether the deal has closed], [Yuri: verify], [Yuri: news file item 7], [NEXT_TEXT]. monopolies: [Pietro] (data note) and FINDING_1–3 under the policy timeline. hops: FINDING_1–3 under the rerouting toy. map: FINDING_1–3 under the flows map, 2× TO FILL (Australia). paper: [Parth]. methods: [Parth: two or three sentences from `predictor_method.md`].
+ace: [Yury: verify the share], [Yury: verify the date], [Parth, Pietro]. sovereign: [Yury: check whether the deal has closed], [Yury: verify], [Yury: news file item 7], [NEXT_TEXT]. monopolies: [Pietro] (data note) and FINDING_1–3 under the policy timeline. hops: FINDING_1–3 under the rerouting toy. map: FINDING_1–3 under the flows map, 2× TO FILL (Australia). paper: [Parth]. methods: [Parth: two or three sentences from `predictor_method.md`].
 
 Left: Phase 5.
 
