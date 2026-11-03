@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Methods & limits · Sovereignty on paper?</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<nav class="nav" aria-label="Pages"><div class="nav-in"><b>Sovereignty on paper?</b><a href="index.html">Home</a><a href="monopolies.html">Monopolies</a><a href="words.html">Words</a><a href="ace.html">Ace in the hole</a><a href="paper.html">On paper</a><a href="hops.html">One hop</a><a href="sovereign.html">Sovereign</a><a href="map.html">Map</a><a href="found.html">Expected vs found</a><a href="methods.html" class="on" aria-current="page">Methods & limits</a></div></nav>
+
+<main class="wrap">
+
+<header class="pagehead"><p class="eyebrow">Page 10 of 10</p><h1>Methods & limits</h1></header>
+<div class="col pagetext"><p><b>Data.</b> Bilateral trade for six rare-earth product codes and a placebo (non-rare-earth magnets), from CEPII BACI (HS92, 1995–2024), by weight first and by value alongside. "The West" means the United States, Japan and the EU27, with trade between EU members left out. The monthly chart for 2024–2026 uses the buyers' own records (UN Comtrade for the US and Japan, Eurostat Comext for the EU), because China has not yet published its 2025 export data.</p><p><b>Dependence.</b> Direct dependence is the share of a country's imports that comes from China. One-hop dependence adds China's share inside each supplier's own imports, assuming those Chinese inputs are spread evenly across what the supplier sells.</p><p><b>Text analysis.</b> We classified 576 Chinese government documents (1999–2026) with a dictionary of eight frames, and report each frame's share with bootstrap intervals.</p><p><b>The predictor.</b> For a chosen year and stage, it removes China's sales to the West and counts what other exporters now sell elsewhere, discounting the Chinese content of their own exports. <span class="ph">[Parth: two or three sentences from <code>predictor_method.md</code>]</span></p><p><b>How we used AI.</b> Claude helped us draft the texts and write code; Claude Code ran the data pulls and calculations. Every number comes from code we can rerun, and each claim is tied to a primary source listed under it.</p><p><b>Limits.</b> Trade data show where goods go, not who has the plants to refine them. The ore code (HS 253090) includes many non-rare-earth minerals, so we do not use ore tonnages. The magnet code (HS 8505.11) includes some non-rare-earth magnets, and the placebo shows a similar hidden dependence, so part of what we measure is China's weight in manufacturing in general. The correlations on this page are exploratory: they compare growth rates and do not test our hypotheses. All figures are drafts computed in October 2026.</p></div>
+<section id="care"><p class="eyebrow">Read with care</p><h2>What the trade data can and cannot show</h2><details class="care" open>
+        <summary>Read with care</summary>
+        <ul>
+          <li>The map draws only the largest flows per stage and year (top 60 by value and by weight, plus China's top 30 exports and the top 30 imports of the USA, Japan and EU27). Totals and shares use all flows.</li>
+          <li>8505.11 covers all metal magnets, not only rare-earth ones. The EU separates rare-earth magnets only from 2023.</li>
+          <li>Ore codes are catch-all lines, so S1 is an upper bound.</li>
+          <li>BACI reconciles exporter and importer reports, so figures can differ from national statistics.</li>
+          <li>Hong Kong, Macao and "Other Asia nes" (Taiwan) are kept apart from China.</li>
+        </ul>
+      </details></section>
+<section id="formulas"><p class="eyebrow">Predictor · formulas</p><h2>How the gap and the refill ceiling are computed</h2><div class="formulas"><h3>The gap</h3>
+        <p>For importer <i>i</i> at one stage and year, with <i>w<sub>j</sub></i> the share of its imports from partner <i>j</i>:</p>
+        <div class="formula">direct   D = w(China)
+via hubs H = Σ w(j) × c(j)        j ≠ China
+gap      = (cut·D + cut·reach·H) × (1 − refill)</div>
+        <p><i>c(j)</i>, the Chinese content of partner <i>j</i>'s exports, is proxied by <i>j</i>'s own import share from China: at the same stage (re-export) or the stage before (the partner processes Chinese inputs). "Larger of the two" is the upper bound.</p>
+      <h3>The refill ceiling</h3>
+        <div class="formula">avail(k) = X(k → outside the West)
+           × (1 − cut·reach·c(k))
+pool     = Σ avail(k)
+ceiling  = pool / Σ gap(bloc)</div>
+        <p>Only supply that now goes somewhere else can be diverted: shipments between Western countries add nothing to the bloc. China is a destination like any other, so ore and carbonate now sold to Chinese refiners count. Here <i>c(k)</i> is capped by mass balance: <i>k</i> cannot ship more Chinese material than it imports from China (a magnet is taken as 30% rare earth by weight). The bloc is set by the West switch at the top: by default the USA, Japan and EU27 (extra-EU trade only); the alternative is the wider West of 38 countries (EU27 extra-EU plus ten non-EU importers). Exports to countries outside the chosen West count as divertible. The ceiling is shared pro rata.</p>
+        <p><b>Coverage of China's direct sales</b> = pool ÷ (cut × China's direct sales to the bloc), not capped at 100%. At the defaults (100%, 100%, larger of the two, tonnes, 2024, default West) it is the figure in <i>coverage_split_2012_2024.csv</i>.</p>
+      </div></section>
+<section id="correlations"><p class="eyebrow">Exploratory</p><h2>Correlations</h2><div class="figrow"><figure><img src="img/Q1_substitution.png" alt="Q1 · substitution" loading="lazy"><figcaption class="src">Q1 · substitution</figcaption></figure><figure><img src="img/Q1_supply_loss.png" alt="Q1 · supply loss" loading="lazy"><figcaption class="src">Q1 · supply loss</figcaption></figure><figure><img src="img/Q2_price.png" alt="Q2 · price" loading="lazy"><figcaption class="src">Q2 · price</figcaption></figure><figure><img src="img/Q3_hubs.png" alt="Q3 · hubs" loading="lazy"><figcaption class="src">Q3 · hubs</figcaption></figure><figure><img src="img/Q4_comovement.png" alt="Q4 · co-movement" loading="lazy"><figcaption class="src">Q4 · co-movement</figcaption></figure></div><p class="src">Exploratory: correlations of growth rates, not tests of our hypotheses</p></section>
+<section id="status">
+  <p class="eyebrow">Where the project stands · 20 Oct 2026</p>
+  <h2>What is done, and what is still to come</h2>
+  <ul class="status">
+    <li><b>Trade panel (BACI, 1995–2024)</b><span><span class="tag ok">Acquired</span></span><span>Bilateral flows for all six codes and the placebo. Used in chapters 2 and 3.</span></li>
+    <li><b>Chinese policy corpus</b><span><span class="tag prelim">Preliminary</span></span><span>576 documents analysed: topics, framing dictionary, distinctive vocabulary.</span></li>
+    <li><b>Western policy corpus</b><span><span class="tag prelim">Started</span></span><span>87 US documents analysed in figures only. EU and Japan not started.</span></li>
+    <li><b>Policy event list</b><span><span class="tag prelim">Draft</span></span><span>60 events, 41 verified against primary text. Coding provisional.</span></li>
+    <li><b>Data audit</b><span><span class="tag pend">Pending</span></span><span>Monthly China series has a gap from Oct 2012 to Dec 2015. US 10-digit data blocked.</span></li>
+    <li><b>Dependence measures (H3)</b><span><span class="tag pend">Pending</span></span><span>Direct and one-hop, by stage, for the USA, EU27 and Japan.</span></li>
+    <li><b>Structural-break tests (H1, H2)</b><span><span class="tag pend">Pending</span></span><span>Monthly series by stage, ±12-month windows around each event.</span></li>
+    <li><b>Exposure simulator</b><span><span class="tag pend">Pending</span></span><span>Will go live on this site once dependence is computed.</span></li>
+  </ul>
+</section>
+<section id="sources"><p class="eyebrow">Source notes</p><h2>Where the numbers come from</h2><div class="col"><p>Data: CEPII BACI HS92 V202601 · USGS Mineral Commodity Summaries · group event list and text corpus. Every result on this site is descriptive or preliminary.</p></div></section>
+<aside class="sources"><h3>Sources</h3><p>Pietro's <code>calc_notes.md</code>, <code>data_inventory.md</code> and <code>coverage_note.md</code>; <code>parth_code_check.md</code>; the text-analysis report; Anna's <code>magnet_notes.md</code>.</p></aside>
+
+<footer class="end">
+  <span>Sovereignty on paper? · Anna, Parth, Yuri, Pietro · Sciences Po, autumn 2026</span>
+  <span>Data: CEPII BACI HS92 V202601 · USGS Mineral Commodity Summaries · group event list and text corpus. Every result on this page is descriptive or preliminary.</span>
+</footer>
+</main>
+<div id="tip" role="tooltip"></div>
+
+<script src="assets/main.js"></script>
+<script>
+
+</script>
+</body>
+</html>

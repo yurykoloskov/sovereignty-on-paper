@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>One hop away · Sovereignty on paper?</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<nav class="nav" aria-label="Pages"><div class="nav-in"><b>Sovereignty on paper?</b><a href="index.html">Home</a><a href="monopolies.html">Monopolies</a><a href="words.html">Words</a><a href="ace.html">Ace in the hole</a><a href="paper.html">On paper</a><a href="hops.html" class="on" aria-current="page">One hop</a><a href="sovereign.html">Sovereign</a><a href="map.html">Map</a><a href="found.html">Expected vs found</a><a href="methods.html">Methods & limits</a></div></nav>
+
+<main class="wrap">
+
+<header class="pagehead"><p class="eyebrow">Page 6 of 10</p><h1>One hop away</h1></header>
+<div class="col pagetext"><p>A magnet bought from Vietnam or South Korea is not a Chinese import in the statistics. But if Vietnam's own imports come largely from China, the dependence is only one step removed. We measure both: direct dependence (the share bought from China) and one-hop dependence (adding China's share inside each supplier's own imports). For US magnets in 2024, direct dependence is 77% and one-hop dependence 93%. Japan, China's target in 2010, buys only about 36% of its magnets directly from China, but about 68% once one hop is counted: almost three quarters of the difference comes through Vietnam, which itself buys 87% of its magnets from China. And the gap has grown. After 2010, Japan cut its direct dependence from about 65% to 36%, but its one-hop dependence fell much less and has been rising again since 2021. Japan diversified on paper; in practice, much of its dependence simply moved through Vietnam.</p></div>
+<section id="dependence"><p class="eyebrow">Dependence on China <span class="tag prelim">Draft</span></p><h2>Direct and one-hop dependence, 1995–2024</h2><figure class="bigfig"><img src="img/dependence_S4_tonnes.png" alt="Dependence on China for magnets (HS 8505.11), direct and one-hop, USA, Japan and EU27, 1995-2024, by weight"><figcaption class="src">Magnets (S4), by weight. Direct (dashed) and one-hop (solid). Data: <a href="data/one_hop_dependence.csv">one_hop_dependence.csv</a>, <a href="data/top5_gap_contributors_2024.csv">top5_gap_contributors_2024.csv</a>.</figcaption></figure><aside class="findings"><h3>Findings</h3><dl><dt>What you see</dt><dd>the one-hop line sits about 16 points above the direct line for US magnets, and 31 points for Japan (2024, by weight); for Japan the gap has roughly doubled since 2010.</dd><dt>What it means</dt><dd>diversifying suppliers does not remove China from the chain: Japan diversified on paper, not in practice.</dd><dt>Careful</dt><dd>we assume each supplier's imports from China are spread evenly across what it sells; trade data cannot follow single shipments. Non-rare-earth magnets (the placebo) show a similar hidden layer, so part of it reflects China's weight in manufacturing in general.</dd></dl></aside><h3 class="subh">Other stages</h3><div class="figrow"><figure><img src="img/dependence_S2_tonnes.png" alt="Dependence on China, Compounds, by weight" loading="lazy"><figcaption class="src">Compounds (S2)</figcaption></figure><figure><img src="img/dependence_S3_tonnes.png" alt="Dependence on China, Metals, by weight" loading="lazy"><figcaption class="src">Metals (S3)</figcaption></figure><figure><img src="img/dependence_S1_tonnes.png" alt="Dependence on China, Ores (catch-all code, not rare-earth-specific), by weight" loading="lazy"><figcaption class="src">Ores (catch-all code, not rare-earth-specific) (S1)</figcaption></figure><figure><img src="img/dependence_placebo_tonnes.png" alt="Dependence on China, Placebo (non-rare-earth magnets), by weight" loading="lazy"><figcaption class="src">Placebo (non-rare-earth magnets) (placebo)</figcaption></figure></div></section>
+<section id="rerouting">
+  <p class="eyebrow">Rerouting <span class="tag illus">Illustrative · not data</span></p>
+  <h2>Buying from Vietnam can still mean buying from China</h2>
+  <div class="col"><p class="lede">When a Western importer cuts its direct purchases from China, the material may come back through a third country that itself buys from China. We call the difference the <b>rerouting gap</b>. Move the sliders to see how it opens.</p></div>
+  <div class="calc panel" style="margin-top:24px">
+    <div>
+      <div class="sl"><div class="row"><label for="ra">Importer buys directly from China</label><b id="oa"></b></div><input type="range" id="ra" min="0" max="100" value="40"></div>
+      <div class="sl"><div class="row"><label for="rh">Importer buys from a hub country</label><b id="oh"></b></div><input type="range" id="rh" min="0" max="100" value="30"></div>
+      <div class="sl"><div class="row"><label for="rc">The hub's own supply from China</label><b id="oc"></b></div><input type="range" id="rc" min="0" max="100" value="80"></div>
+      <div class="res">
+        <div><div class="v" id="rd"></div><div class="l">Direct</div></div>
+        <div><div class="v" id="r1"></div><div class="l">One-hop</div></div>
+        <div><div class="v" id="rg" style="color:var(--cn)"></div><div class="l">Rerouting gap</div></div>
+      </div>
+      <p class="formula">direct = imports from China ÷ all imports<br>one-hop = direct + Σ (share from hub × hub's China share)</p>
+    </div>
+    <svg class="chart" id="toy" viewBox="0 0 640 360" role="img" aria-label="Toy network of an importer, a hub and China"></svg>
+  </div>
+  <aside class="findings"><h3>Findings</h3><dl><dt>What you see</dt><dd><span class="ph">[FINDING_1: rerouting toy (illustrative)]</span></dd><dt>What it means</dt><dd><span class="ph">[FINDING_2: rerouting toy (illustrative)]</span></dd><dt>Careful</dt><dd><span class="ph">[FINDING_3: rerouting toy (illustrative)]</span></dd></dl></aside>
+  <p class="src">Definitions from Research_Question_and_Hypotheses.md §3. The proportional one-hop rule is the proposed default and still an open group decision (a threshold rule is the alternative). No real values are shown here.</p>
+</section>
+<aside class="sources"><h3>Sources</h3><p><code>one_hop_dependence.csv</code> and <code>top5_gap_contributors_2024.csv</code> (CEPII BACI HS92, 2024, tonnes; draft, computed by Pietro on 29 October 2026).</p></aside><p class="nextwrap"><a class="next" href="sovereign.html">So who can really claim sovereignty over rare earths? China comes closest, almost on its own. The West would need partners, and those partners have their own idea of sovereignty.<b>Next: Who can be sovereign? →</b></a></p>
+<footer class="end">
+  <span>Sovereignty on paper? · Anna, Parth, Yuri, Pietro · Sciences Po, autumn 2026</span>
+  <span>Data: CEPII BACI HS92 V202601 · USGS Mineral Commodity Summaries · group event list and text corpus. Every result on this page is descriptive or preliminary.</span>
+</footer>
+</main>
+<div id="tip" role="tooltip"></div>
+
+<script src="assets/main.js"></script>
+<script>
+/* ---------- rerouting toy ---------- */
+(function(){
+  const ra=$("#ra"), rh=$("#rh"), rc=$("#rc"), svg=$("#toy");
+  function draw(src){
+    let a=+ra.value, h=+rh.value; const c=+rc.value;
+    if(a+h>100){ if(src===rh){ a=100-h; ra.value=a; } else { h=100-a; rh.value=h; } }
+    const o=100-a-h, one=a+h*c/100;
+    $("#oa").textContent=a+"%"; $("#oh").textContent=h+"%"; $("#oc").textContent=c+"%";
+    $("#rd").textContent=a+"%"; $("#r1").textContent=Math.round(one)+"%"; $("#rg").textContent="+"+Math.round(one-a)+" pts";
+    svg.innerHTML="";
+    const defs=el("defs",{},svg);
+    [["mc","--cn"],["mi","--ink2"],["mm","--oth"]].forEach(([id,c])=>{ const m=el("marker",{id,viewBox:"0 0 10 10",refX:9,refY:5,markerWidth:7,markerHeight:7,orient:"auto"},defs); el("path",{d:"M0,0L10,5L0,10z",fill:`var(${c})`},m); });
+    const N={cn:[90,190,40,"China","--cn"],hub:[320,70,36,"Hub","--ink2"],oth:[320,310,30,"Other","--oth"],imp:[560,190,44,"Importer","--accent"]};
+    function edge(p,q,w,c,mk,lab,dash){ if(w<=0) return; const dx=q[0]-p[0],dy=q[1]-p[1],L=Math.hypot(dx,dy),ux=dx/L,uy=dy/L;
+      el("line",{x1:p[0]+ux*(p[2]+4),y1:p[1]+uy*(p[2]+4),x2:q[0]-ux*(q[2]+6),y2:q[1]-uy*(q[2]+6),stroke:`var(${c})`,"stroke-width":Math.max(1.5,w*.16),"marker-end":`url(#${mk})`,"stroke-dasharray":dash||"none"},svg);
+      const lx=(p[0]+q[0])/2, ly=(p[1]+q[1])/2, wd=lab.length*7+12;
+      el("rect",{x:lx-wd/2,y:ly-11,width:wd,height:21,rx:4,fill:"var(--surface)",stroke:"var(--line)"},svg); txt(svg,lx,ly+4,lab,{"text-anchor":"middle",fill:"var(--ink)","font-size":"11.5"}); }
+    edge(N.cn,N.imp,a,"--cn","mc",`direct ${a}%`);
+    edge(N.hub,N.imp,h,"--ink2","mi",`via hub ${h}%`);
+    edge(N.oth,N.imp,o,"--oth","mm",`other ${o}%`);
+    edge(N.cn,N.hub,c,"--cn","mc",`hub buys ${c}% from China`,"6 4");
+    Object.values(N).forEach(([x,y,r,l,c])=>{ el("circle",{cx:x,cy:y,r,fill:"var(--surface)",stroke:`var(${c})`,"stroke-width":3},svg); txt(svg,x,y+4,l,{"text-anchor":"middle",fill:"var(--ink)","font-size":"12.5","font-weight":"600"}); });
+  }
+  [ra,rh,rc].forEach(s=>s.addEventListener("input",()=>draw(s))); draw();
+})();
+</script>
+</body>
+</html>
