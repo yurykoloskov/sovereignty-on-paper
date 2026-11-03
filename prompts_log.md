@@ -9,3 +9,8 @@ PHASE 0 - CHECK INPUTS. PHASE 1 - SPLIT INTO 10 PAGES (index, monopolies, words,
 1. Apply all fact-check fixes that have a source in Yury's fact-check; replace each [Yury: …] bracket, add its source to the page's Sources box, list meaning-changing fixes separately in FINAL_REPORT.md, save texts as anna_texts_final.md. 2. Quiz source line must name Weng et al. (reserves/deposits) and IEA 2024; no USGS. 3. Delete old intro prose that repeats Anna's text on monopolies, words, hops, map; keep charts, sliders, maps, captions, data notes, sources; move facts missing from Anna's text to captions or methods and list the moves. 4. sovereign.html Next page → map.html with the text "Explore the map: where each country stands in the chain." Then continue with Phase 5.
 
 Outcome: 10-page static site built from the single index.html in five phases; Anna's final text placed word for word, predictor with USA+Japan+EU27 default reproduces 237% / 18% / 13%; all pages load without script errors or broken links in a simulated browser; real-browser and phone checks still to be done by a person; not committed or pushed.
+
+## 3 Nov 2026 — final fixes (Yury)
+Prompt: `claude_code_final_fixes_prompt (3).md` (fix the blank chart on ace.html, remove placeholders and internal working notes, update the status panel, four marked changes to Anna's text, 10 November tense), with full names Anna Carminati, Parth Piyush Prasad, Yury Koloskov, Pietro Ceccone and course AI-Assisted Analysis, KINT 6005; override: commit and push everything, including to `main`.
+
+Outcome: all fixes made in the build pipeline and rebuilt; 0 yellow placeholders, ace chart verified in headless Chromium (31/32/32 points); report in FIXES_REPORT.md.

@@ -109,3 +109,6 @@ Left: Phase 5.
 
 ## Decisions applied + Phase 5 (final check) — done 3 Nov 2026
 Fact-check fixes, quiz source, old-prose trims and the sovereign → map link applied (details in FINAL_REPORT.md). Final texts saved as `../site_build/inputs/anna_texts_final.md`. All checks run; `FINAL_REPORT.md`, `site.zip` and `prompts_log.md` written. Left: real-browser and phone check by a person, then commit and push.
+
+## Final fixes — 3 Nov 2026
+Done: ace.html plotly bug, 15 placeholders, internal notes, status panel, Anna's text changes, names and course. Details in FIXES_REPORT.md. Left: group approval of the drafted texts; Parth's method sentences.
